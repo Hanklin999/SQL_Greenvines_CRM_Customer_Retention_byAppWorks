@@ -16,12 +16,6 @@ This SQL project analyzes **customer retention by acquisition channel and year**
 
 ---
 
-## 🧩 CRM Entity-Relationship Diagram
-
-![Entity Diagram](assets/sql_crm_erd_diagram.png)
-
----
-
 ## 🔄 SQL Query Flow Overview
 
 1. **Define Cohorts** – Group new customers by year and channel  
@@ -46,12 +40,17 @@ This SQL project analyzes **customer retention by acquisition channel and year**
 
 ---
 
+
+## 🧩 CRM Entity-Relationship Diagram
+
+![Entity Diagram](assets/sql_crm_erd_diagram.png)
+
+---
 ## 🧮 SQL Logic Structure
 
 > The analysis uses Common Table Expressions (CTEs) to filter cohorts, join customer return activity, and calculate return rates with conditional aggregation.
 
 ![Query Flow](assets/sql_crm_query_flowchart.png)
-
 
 ---
 
