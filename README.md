@@ -50,7 +50,7 @@ A structured SQL cohort analysis of new customer return behavior across acquisit
 | File | Description |
 |------|-------------|
 | [`Query 1: New Customers by Channel and Year`](sql/query_1_retention_by_channel.sql) | Retention rate by channel and year |
-| [`Query 2: Returning Customers & Return Rate) | YoY retention change |
+| [`Query 2: Returning Customers & Return Rate)`](sql/query_2_yoy_diff.sql) | YoY retention change |
 | [`Query 3: Performance Tier Classification`](sql/query_3_flag_underperforming.sql) | Tier-based channel performance labeling |
 ---
 
