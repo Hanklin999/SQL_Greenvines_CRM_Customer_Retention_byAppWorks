@@ -1,6 +1,9 @@
-# 🛒 SQL CRM Retention Analysis – Greenvines (AppWorks Simulation)
+# SQL Case Study: CRM Retention Analysis (AppWorks Simulation)
 
-A structured SQL cohort analysis of new customer return behavior across acquisition channels using simulated e-commerce data. This project mirrors real-world CRM and growth analytics scenarios, applying retention KPIs to drive segmentation and business insights.
+📅 Duration: 3 days | 🛠 Tool: SQLite / Colab  
+🔎 Focus: E-commerce CRM | New Customer Retention | Channel Performance
+
+This SQL project analyzes **customer retention by acquisition channel and year**, using a simulated CRM dataset. By calculating return rates and tiering performance, we identify growth opportunities and underperforming segments for actionable business insights.
 
 ---
 
@@ -19,20 +22,28 @@ A structured SQL cohort analysis of new customer return behavior across acquisit
 
 ---
 
-## 🔄 SQL Retention Pipeline Overview
+## 🔄 SQL Query Flow Overview
 
+
+1. Extract new customers by channel and year
+2. Join with order data to identify returners
+3. Calculate return rates by segment
+4. Assign performance tier
+5. 
 ![Retention Pipeline](assets/sql_crm_retention_pipeline.png)
 
 ---
 
-## 📦 Dataset Overview
+## 📦 Dataset Summary
 
-| Table | Description |
-|-------|-------------|
-| `Customers` | Customer profile: ID, first transaction date, channel |
-| `Orders` | Order records with transaction date & customer ID |
-| `OrderDetails` | Item-level purchase data |
-| `Channels` | Online/offline classification & source info |
+| Table         | Description                               | Key Columns         |
+|---------------|-------------------------------------------|---------------------|
+| Customers     | New customer list                         | customer_id, year   |
+| Orders        | Order transactions                        | order_id, customer_id, order_date |
+| OrderDetails  | Product details per order                 | order_id, product_id|
+| Products      | Product category and metadata             | product_id          |
+| Channels      | Acquisition channel metadata              | channel_id          |
+
 
 ---
 
@@ -87,9 +98,9 @@ Table Breakdown:
 
 ## ✅ Key Insights
 
-- Online channels underperformed vs offline retail in 2021.
-- Top-performing store had a return rate of 30%+ vs 6% for the worst.
-- Suggest focusing on nurturing newly acquired users via offline strategies or improving onboarding for online buyers.
+- **Online channel return rate (14%)** is significantly lower than the **best-performing retail store (30%)**.
+- Tier analysis identified 3 stores with under 10% retention – potential targets for intervention.
+- Suggest **optimizing CRM campaigns** for online-acquired customers or invest in offline conversion tracking.
 
 This analysis can guide **budget allocation** and **CRM strategies** for future acquisition campaigns.
 
