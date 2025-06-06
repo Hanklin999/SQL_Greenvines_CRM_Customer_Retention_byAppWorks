@@ -79,7 +79,6 @@ Channel-year pairs are flagged as:
 - 🔴 **Underperforming** (< 0.30)
 - 🟡 **Moderate** (0.30–0.39)
 - 🟢 **Strong** (0.40+)
-![Tiering Bar Chart](assets/Q3_retention_summary.png)
 
 Table Breakdown:
 ![Tier Table](assets/Q3_performance_tier_table.png)
