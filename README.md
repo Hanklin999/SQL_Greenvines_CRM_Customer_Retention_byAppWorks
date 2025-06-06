@@ -11,6 +11,20 @@ A structured SQL cohort analysis of new customer return behavior across acquisit
 - Identify **underperforming segments** for CRM targeting
 - Translate SQL logic into actionable growth strategy
 
+---
+
+## 🧩 CRM Entity-Relationship Diagram
+
+![Entity Diagram](assets/sql_crm_erd_diagram.png)
+
+---
+
+## 🔄 SQL Retention Pipeline Overview
+
+![Retention Pipeline](assets/sql_crm_retention_pipeline.png)
+
+---
+
 ## 📦 Dataset Overview
 
 | Table | Description |
@@ -26,6 +40,11 @@ A structured SQL cohort analysis of new customer return behavior across acquisit
 
 > The analysis uses Common Table Expressions (CTEs) to filter cohorts, join customer return activity, and calculate return rates with conditional aggregation.
 
+![Query Flow](assets/sql_crm_query_flowchart.png)
+
+
+---
+
 📂 Queries stored in [`/sql`](./sql):
 
 | File | Description |
@@ -36,17 +55,35 @@ A structured SQL cohort analysis of new customer return behavior across acquisit
 ---
 
 
-##  Analysis Highlights
+##📊  Analysis Highlights
 
 ### Step 5.1 – Retention Rate by Channel and Year
 > Calculates return rates for new customers by acquisition channel and cohort year.
+Return rates across channels for both years. Channels like「台北統一門市」showed strong growth.
+![Retention by Channel](assets/Q1_yoy_retention_rate_graph.png)
+
+Data Summary:
+![Table – Return Rate by Year](assets/Q1_yoy_retention_rate_form.png)
 
 ### Step 5.2 – Year-over-Year Trends
 > Shows which channels improved or declined in retention from 2021 to 2022.
+Bar chart showing which acquisition channels improved or declined in 2022.
+![YoY Change Chart](assets/Q2_yoy_retention_change.png)
+
+Data Table:
+![YoY Diff Table](assets/Q2_yoy_retention_change_form.png)
 
 ### Step 5.3 – Performance Tiering
 > Labels channels as “Strong”, “Moderate”, or “Underperforming” for action prioritization.
+Channel-year pairs are flagged as:
+- 🔴 **Underperforming** (< 0.30)
+- 🟡 **Moderate** (0.30–0.39)
+- 🟢 **Strong** (0.40+)
 
+Table Breakdown:
+![Tier Table](assets/Q3_performance_tier_table.png)
+
+---
 ## 💡 Decision Simulation (Use Cases)
 
 ### 👩‍💼 PM (Product Manager)
@@ -69,15 +106,14 @@ A structured SQL cohort analysis of new customer return behavior across acquisit
 ---
 
 ## 📁 Project Structure
-
+```
 SQL_CRM_Retention_Analysis/
 ├── data/ # Simulated customer & order tables (csv)
 ├── sql/ # SQL query files
 ├── notebooks/ # Optional: Jupyter or Colab notebook
 ├── assets/ # Retention chart images
-├── outputs/ # Final KPI tables
 └── README.md
-
+```
 ---
 
 ## 📬 Contact
