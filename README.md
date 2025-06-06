@@ -28,10 +28,11 @@ A structured SQL cohort analysis of new customer return behavior across acquisit
 
 📂 Queries stored in [`/sql`](./sql):
 
-- `query_1_retention_by_channel.sql`: Return rate by channel & year
-- `query_2_yoy_diff.sql`: Year-over-year change per channel
-- `query_3_flag_underperforming.sql`: Performance tiering
-
+| File | Description |
+|------|-------------|
+| [`query_1_retention_by_channel.sql`](sql/query_1_retention_by_channel.sql) | Retention rate by channel and year |
+| [`query_2_yoy_diff.sql`](sql/query_2_yoy_diff.sql) | YoY retention change |
+| [`query_3_flag_underperforming.sql`](sql/query_3_flag_underperforming.sql) | Tier-based channel performance labeling |
 ---
 
 
