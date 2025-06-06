@@ -112,7 +112,6 @@ SQL_CRM_Retention_Analysis/
 ├── sql/ # SQL query files
 ├── notebooks/ # Optional: Jupyter or Colab notebook
 ├── assets/ # Retention chart images
-├── outputs/ # Final KPI tables
 └── README.md
 ```
 ---
