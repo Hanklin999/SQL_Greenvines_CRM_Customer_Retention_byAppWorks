@@ -106,7 +106,7 @@ Table Breakdown:
 ---
 
 ## 📁 Project Structure
-
+```
 SQL_CRM_Retention_Analysis/
 ├── data/ # Simulated customer & order tables (csv)
 ├── sql/ # SQL query files
@@ -114,7 +114,7 @@ SQL_CRM_Retention_Analysis/
 ├── assets/ # Retention chart images
 ├── outputs/ # Final KPI tables
 └── README.md
-
+```
 ---
 
 ## 📬 Contact
