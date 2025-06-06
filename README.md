@@ -1,25 +1,39 @@
-# SQL_Greenvines_CRM_Customer_Retention_byAppWorks
-SQL cohort analysis for CRM strategy and channel-based customer retention insights. Dataset provided by ALPHA Camp Taiwan.
+# 🛒 SQL CRM Retention Analysis – Greenvines (AppWorks Simulation)
 
-This project explores how customer retention behavior varies by acquisition channel and year using SQL and cohort-based logic.  
-It simulates a real business scenario for **Greenvines**, a clean beauty brand in Asia, and was originally developed for the **AppWorks Data Program**.
+A structured SQL cohort analysis of new customer return behavior across acquisition channels using simulated e-commerce data. This project mirrors real-world CRM and growth analytics scenarios, applying retention KPIs to drive segmentation and business insights.
 
-##  Objective
+---
 
-To help the Growth Marketing team understand which acquisition channels generate more loyal customers, and how return rates evolve year-over-year.
+## 🎯 Project Objective
 
-##  Dataset
+- Analyze new customer **retention rate by acquisition channel**
+- Compare **year-over-year retention performance** (2021 vs 2022)
+- Identify **underperforming segments** for CRM targeting
+- Translate SQL logic into actionable growth strategy
 
-- 5 tables: `Customers`, `Orders`, `OrderDetails`, `Products`, `Channels`
-- Format: CSV files (see `/data` folder)
-- Simulated but realistic transaction and customer history data
+## 📦 Dataset Overview
 
-##  Tools Used
+| Table | Description |
+|-------|-------------|
+| `Customers` | Customer profile: ID, first transaction date, channel |
+| `Orders` | Order records with transaction date & customer ID |
+| `OrderDetails` | Item-level purchase data |
+| `Channels` | Online/offline classification & source info |
 
-- Google Colab (Python, pandas, sqlite3)
-- SQL (SQLite)
-- GitHub for documentation
-- Optional: Tableau for visualizations
+---
+
+## 🧮 SQL Logic Structure
+
+> The analysis uses Common Table Expressions (CTEs) to filter cohorts, join customer return activity, and calculate return rates with conditional aggregation.
+
+📂 Queries stored in [`/sql`](./sql):
+
+- `query_1_retention_by_channel.sql`: Return rate by channel & year
+- `query_2_yoy_diff.sql`: Year-over-year change per channel
+- `query_3_flag_underperforming.sql`: Performance tiering
+
+---
+
 
 ##  Analysis Highlights
 
@@ -32,16 +46,44 @@ To help the Growth Marketing team understand which acquisition channels generate
 ### Step 5.3 – Performance Tiering
 > Labels channels as “Strong”, “Moderate”, or “Underperforming” for action prioritization.
 
-##  Key Insights
+## 💡 Decision Simulation (Use Cases)
 
-- **Website-acquired customers had the lowest return rates** across both years (~14%)
-- **Retail channels demonstrated higher loyalty**, with up to 35% return rate in 2022
-- **Some channels improved dramatically YoY**, e.g., 台北敦南 improved from 6% → 23%
-- Performance tiering helps CRM team identify priority segments for re-engagement
+### 👩‍💼 PM (Product Manager)
+> Design re-engagement flow (email/push/loyalty) for web customers acquired in 2022 with low return rates.
 
-##  Strategic Recommendations
+### 📈 Growth Strategist
+> Recommend shifting ad spend to retail-based onboarding due to stronger in-store retention trends.
 
-- Improve UX and retention campaigns for website cohorts
-- Consider duplicating offline customer experience online
-- Segment channels with declining trends for targeted experiments
+### 💰 Investor / BizOps
+> Use return rate as KPI proxy to evaluate CAC effectiveness across channels before reinvestment.
+
+---
+
+## 🛠 Tech Stack
+
+- **SQL (SQLite-style CTE logic)**
+- **Google Colab (query execution + visualization)**
+- **Notion / GitHub (portfolio presentation)**
+
+---
+
+## 📁 Project Structure
+
+SQL_CRM_Retention_Analysis/
+├── data/ # Simulated customer & order tables (csv)
+├── sql/ # SQL query files
+├── notebooks/ # Optional: Jupyter or Colab notebook
+├── assets/ # Retention chart images
+├── outputs/ # Final KPI tables
+└── README.md
+
+---
+
+## 📬 Contact
+
+**Hank Lin（林致翰）**  
+📧 [chihhanlin99@gmail.com](mailto:chihhanlin99@gmail.com)  
+🔗 [GitHub](https://github.com/Hanklin999)  
+🔗 [LinkedIn](https://www.linkedin.com/in/hank-lin-a05189181/)  
+🌐 [Portfolio (Notion)]([https://your-notion-link](https://four-elbow-906.notion.site/Personal-Project-SQL-CRM-Retention-Analysis-208d839e9e7e8010aeebd067b140ca5b?pvs=74)) 
 
