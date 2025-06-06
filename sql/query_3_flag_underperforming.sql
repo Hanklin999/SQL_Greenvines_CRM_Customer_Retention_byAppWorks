@@ -1,23 +1,32 @@
 -- Query 3: Flag underperforming channels based on return rate threshold
-WITH rate_table AS (
-    SELECT
-        ch.channel_name,
-        EXTRACT(YEAR FROM o.order_date) AS order_year,
-        ROUND(COUNT(DISTINCT CASE WHEN rn > 1 THEN o.order_id END) * 1.0 / 
-              COUNT(DISTINCT o.order_id), 2) AS return_rate
-    FROM (
-        SELECT *,
-               ROW_NUMBER() OVER (PARTITION BY customer_id ORDER BY order_date) AS rn
-        FROM orders
-    ) o
-    JOIN customers c ON o.customer_id = c.customer_id
-    JOIN channels ch ON c.acquisition_channel_id = ch.channel_id
-    GROUP BY 1, 2
+WITH new_customers AS (
+  SELECT
+    CustomerId,
+    FirstTransactionDate,
+    FirstTransactionYear,
+    FirstChannel
+  FROM Customers
+  WHERE FirstTransactionYear IN (2021, 2022)
+),
+return_stats AS (
+  SELECT
+    nc.FirstTransactionYear AS Year,
+    nc.FirstChannel AS Channel,
+    COUNT(DISTINCT nc.CustomerId) AS TotalNewCustomers,
+    COUNT(DISTINCT o.CustomerId) AS ReturningCustomers,
+    ROUND(COUNT(DISTINCT o.CustomerId) * 1.0 / COUNT(DISTINCT nc.CustomerId), 2) AS ReturnRate
+  FROM new_customers nc
+  LEFT JOIN Orders o
+    ON nc.CustomerId = o.CustomerId
+    AND o.TransactionYear = nc.FirstTransactionYear
+    AND o.TransactionDate > nc.FirstTransactionDate
+  GROUP BY nc.FirstTransactionYear, nc.FirstChannel
 )
 SELECT *,
-       CASE 
-           WHEN return_rate < 0.30 THEN 'Underperforming'
-           WHEN return_rate < 0.35 THEN 'Moderate'
-           ELSE 'Strong'
-       END AS performance_tier
-FROM rate_table;
+  CASE
+    WHEN ReturnRate < 0.3 THEN '⚠️ Underperforming'
+    WHEN ReturnRate < 0.4 THEN '🟡 Moderate'
+    ELSE '✅ Strong'
+  END AS PerformanceTier
+FROM return_stats
+ORDER BY Year, ReturnRate;
