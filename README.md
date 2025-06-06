@@ -49,9 +49,9 @@ A structured SQL cohort analysis of new customer return behavior across acquisit
 
 | File | Description |
 |------|-------------|
-| [`query_1_retention_by_channel.sql`](sql/query_1_retention_by_channel.sql) | Retention rate by channel and year |
-| [`query_2_yoy_diff.sql`](sql/query_2_yoy_diff.sql) | YoY retention change |
-| [`query_3_flag_underperforming.sql`](sql/query_3_flag_underperforming.sql) | Tier-based channel performance labeling |
+| [`Query 1: New Customers by Channel and Year`](sql/query_1_retention_by_channel.sql) | Retention rate by channel and year |
+| [`Query 2: Returning Customers & Return Rate) | YoY retention change |
+| [`Query 3: Performance Tier Classification`](sql/query_3_flag_underperforming.sql) | Tier-based channel performance labeling |
 ---
 
 
@@ -84,6 +84,17 @@ Table Breakdown:
 ![Tier Table](assets/Q3_performance_tier_table.png)
 
 ---
+
+## ✅ Key Insights
+
+- Online channels underperformed vs offline retail in 2021.
+- Top-performing store had a return rate of 30%+ vs 6% for the worst.
+- Suggest focusing on nurturing newly acquired users via offline strategies or improving onboarding for online buyers.
+
+This analysis can guide **budget allocation** and **CRM strategies** for future acquisition campaigns.
+
+---
+
 ## 💡 Decision Simulation (Use Cases)
 
 ### 👩‍💼 PM (Product Manager)
