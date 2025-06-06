@@ -24,12 +24,11 @@ This SQL project analyzes **customer retention by acquisition channel and year**
 
 ## 🔄 SQL Query Flow Overview
 
+1. **Define Cohorts** – Group new customers by year and channel  
+2. **Join Orders** – Identify returning customers  
+3. **Calculate Retention** – Compute return rates by segment  
+4. **Assign Tiers** – Label performance (Strong / Moderate / Underperforming)
 
-1. Extract new customers by channel and year
-2. Join with order data to identify returners
-3. Calculate return rates by segment
-4. Assign performance tier
-5. 
 ![Retention Pipeline](assets/sql_crm_retention_pipeline.png)
 
 ---
@@ -66,7 +65,7 @@ This SQL project analyzes **customer retention by acquisition channel and year**
 ---
 
 
-##📊  Analysis Highlights
+## 📊  Analysis Highlights
 
 ### Step 5.1 – Retention Rate by Channel and Year
 > Calculates return rates for new customers by acquisition channel and cohort year.
